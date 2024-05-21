@@ -1,11 +1,12 @@
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Fredoka One', sans-serif;
     background-color: #ffe4fb;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    overflow: hidden; /* Previene el desplazamiento fuera de la vista */
 }
 
 .container {
@@ -16,6 +17,9 @@ body {
     text-align: center;
     width: 90%;
     max-width: 500px;
+    position: relative; /* Mantiene la posición relativa */
+    max-height: 100vh; /* Asegura que el contenido no se salga de la pantalla */
+    overflow-y: auto; /* Habilita el desplazamiento vertical */
 }
 
 .barra-progreso {
@@ -56,6 +60,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%; /* Ancho completo */
 }
 
 .btn i {
