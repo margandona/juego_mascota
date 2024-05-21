@@ -48,7 +48,7 @@ function mostrarEstadisticas() {
         <p>Tipo: ${mascota.tipo}</p>
         <p>Profesión: ${mascota.profesion}</p>
         <p>Nombre: ${mascota.nombre}</p>
-        <p>Edad: ${mascota.edad}</p>
+        <p>Edad: ${mascota.edad} años</p>
         <div>Salud: <div class="barra-progreso"><div class="progreso" style="width:${mascota.salud}%">${mascota.salud}</div></div></div>
         <div>Hambre: <div class="barra-progreso"><div class="progreso" style="width:${mascota.hambre}%">${mascota.hambre}</div></div></div>
         <div>Diversión: <div class="barra-progreso"><div class="progreso" style="width:${mascota.diversion}%">${mascota.diversion}</div></div></div>
@@ -56,8 +56,8 @@ function mostrarEstadisticas() {
         <div>Baño: <div class="barra-progreso"><div class="progreso" style="width:${mascota.vejigas}%">${mascota.vejigas}</div></div></div>
         <div>Nivel: ${mascota.nivel}</div>
         <div>Experiencia: <div class="barra-progreso"><div class="progreso" style="width:${mascota.experiencia}%">${mascota.experiencia}</div></div></div>
-        <p>Peso: ${mascota.peso}</p>
-        <p>Estatura: ${mascota.estatura}</p>
+        <p>Peso: ${mascota.peso} kg</p>
+        <p>Estatura: ${mascota.estatura} m</p>
     `);
 }
 
@@ -289,6 +289,7 @@ function actualizarEstadisticas() {
         mascota.salud = 0;
         mostrarMensaje("Tu mascota ha muerto.", estadosDeAnimo.muerto);
         $('#btn-crear').show();
+        clearInterval(cicloActualizacion); // Detener el ciclo de actualización
     }
     
     if (mascota.vejigas > 100) mascota.vejigas = 100;
@@ -296,8 +297,9 @@ function actualizarEstadisticas() {
 }
 
 // Función para iniciar el ciclo de actualización periódica
+let cicloActualizacion;
 function iniciarCiclo() {
-    setInterval(function() {
+    cicloActualizacion = setInterval(function() {
         if (mascota.salud > 0) {
             actualizarEstadisticas();
             mostrarEstadisticas();
@@ -374,7 +376,20 @@ function mostrarMenu() {
     $('#btn-mostrar-menu').addClass('oculto');
 }
 
+// Función para que la mascota cumpla años
+function cumplirAnios() {
+    mascota.edad += 1;
+    if (mascota.edad >= 20) { // Edad máxima de vida de la mascota
+        mostrarMensaje("Tu mascota ha muerto de vejez.", estadosDeAnimo.muerto);
+        mascota.salud = 0;
+        $('#btn-crear').show();
+        clearInterval(cicloActualizacion);
+    }
+    mostrarEstadisticas();
+}
+
 // Iniciar el ciclo de actualización al cargar la página
 $(document).ready(function() {
     iniciarCiclo();
+    setInterval(cumplirAnios, 60000); // La mascota cumple años cada minuto
 });

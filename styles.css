@@ -53,6 +53,13 @@ body {
     margin: 5px 0;
     background-color: #ff62df;
     border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn i {
+    margin-right: 8px;
 }
 
 .btn:hover {
@@ -66,4 +73,24 @@ body {
 
 .btn-back:hover, .btn-cerrar-menu:hover {
     background-color: #a40489;
+}
+
+#alimentar .btn, #citas .btn, #pasear .btn, #carrera .btn {
+    margin: 10px 0;
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-group-item .btn-sm {
+    margin-left: 10px;
+}
+
+.alert-info {
+    background-color: #f1c8f5;
+    border-color: #df07c2;
+    color: #a40489;
 }
