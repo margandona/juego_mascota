@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Creamos un objeto vacío
+var mascota = {};
+
+// Función que crea la mascota
+function crearMascota() {
+    mascota.nombre = prompt("Ingresa el nombre de tu mascota");
+    mascota.edad = 0;
+    mascota.salud = 100;
+    mascota.peso = 2;
+    mascota.estatura = 3;
+    mascota.hambre = 100;
+    mascota.educacion = 0;
+    mascota.diversion = 100; 
+    mascota.vejigas = 0; 
+    mascota.comiendo(function(){
+        document.write("La mascota esta comiendo")
+})
+}
+
+// Función que muestra las estadísticas de la mascota
+function mostrarEstadisticas() {
+    document.write("El nombre de la mascota es: " + mascota.nombre + "<br>");
+    document.write("La edad de la mascota es: " + mascota.edad + "<br>");
+    document.write("El estado de salud de la mascota es: " + mascota.salud + "<br>");
+    document.write("El peso de la mascota es: " + mascota.peso + "<br>");
+    document.write("La estatura de la mascota es: " + mascota.estatura+ "<br>");
+    document.write("El nivel de hambre de la mascota es: " + mascota.hambre+ "<br>");
+    document.write("El nivel de educación de la mascota es: " + mascota.educacion+ "<br>");
+    document.write("El nivel de diversión de la mascota es: " + mascota.diversion+ "<br>");
+    document.write("El nivel de baño de la mascota es: " + mascota.vejigas+ "<br>");
+}
+function alimentar(){
+    opcion=5;
+    document.write("<button>Pasta</button>");
+    document.write("<button>Sushi</button>");
+    document.write("<button>Hamburguesa</button>");
+    document.write("<button>Manzana</button>");
+
+    switch (opcion) {
+        case 1: peso = peso+1; 
+            document.write(mascota.comiendo());
+            break;
+        case 2: peso = peso+0.5; 
+        document.write(mascota.comiendo());
+        break;
+        case 3: peso = peso+1; 
+            document.write(mascota.comiendo());
+        break;
+        case 1: peso = peso+0.5; 
+        document.write(mascota.comiendo());
+        break;
+
+    }
+    
+    
+}
+//menu que muestra las posibilidades de la mascota
+function menu(){
+    document.write("<button>Crear</button>");
+    document.write("<button>Estado</button>");
+    document.write("<button>Alimentar</button>");
+    document.write("<button>Estudiar</button>");
+    document.write("<button>Jugar</button>");
+    document.write("<button>Baño</button>");
+
+}
+crearMascota();
+mostrarEstadisticas();
+
+
+    </script>
+</body>
+</html>
