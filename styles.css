@@ -8,6 +8,9 @@ body {
     margin: 0;
     overflow: hidden; /* Previene el desplazamiento fuera de la vista */
 }
+.h1{
+    font-family: 'Fredoka One', sans-serif;
+}
 
 .container {
     background-color: #fff2fd;
@@ -45,8 +48,8 @@ body {
 }
 
 #mascota-imagen {
-    width: 200px; /* Aumenta el tamaño de la imagen */
-    height: 200px;
+    width: 100%; /* Ajusta la imagen al ancho completo del contenedor */
+    height: auto;
     border: 1px solid #df07c2;
     border-radius: 10px;
     margin: 10px auto;

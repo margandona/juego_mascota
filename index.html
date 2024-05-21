@@ -11,62 +11,64 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="my-4">GosthPets</h1>
-        <img id="mascota-imagen" src="img/principal.webp" alt="Mascota">
+        <h1 class="my-4 text-center h1">GosthPetS</h1>
+        <div class="text-center">
+            <img id="mascota-imagen" src="img/principal.webp" alt="Mascota" class="img-fluid">
+        </div>
         <div id="mensajes" class="alert alert-info mt-4"></div>
         <div id="estadisticas" class="mt-4"></div>
         <div id="resumen-estadisticas" class="oculto mt-4"></div>
         <div id="acciones" class="mt-4">
-            <button id="btn-crear" class="btn" onclick="crearMascota()"><i class="fas fa-paw"></i> Crear Mascota</button>
-            <button id="btn-mostrar-estadisticas" class="btn" onclick="toggleEstadisticas()"><i class="fas fa-chart-bar"></i> Mostrar Estadísticas</button>
-            <button class="btn" onclick="mostrarAlimentar()"><i class="fas fa-utensils"></i> Alimentar</button>
-            <button class="btn" onclick="jugar()"><i class="fas fa-gamepad"></i> Jugar</button>
-            <button class="btn" onclick="estudiar()"><i class="fas fa-book"></i> Estudiar</button>
-            <button class="btn" onclick="banio()"><i class="fas fa-bath"></i> Baño</button>
-            <button class="btn" onclick="curar()"><i class="fas fa-heartbeat"></i> Curar</button>
-            <button class="btn" onclick="pasear()"><i class="fas fa-walking"></i> Pasear</button>
-            <button class="btn" onclick="toggleInventario()"><i class="fas fa-box"></i> Inventario</button>
-            <button class="btn" onclick="mostrarCita()"><i class="fas fa-heart"></i> Tener Cita</button>
-            <button class="btn" onclick="elegirCarrera()"><i class="fas fa-user-graduate"></i> Elegir Carrera</button>
-            <button id="btn-cerrar-menu" class="btn btn-danger" onclick="cerrarMenu()"><i class="fas fa-times"></i> Cerrar Menú</button>
+            <button id="btn-crear" class="btn btn-primary w-100 mb-2" onclick="crearMascota()"><i class="fas fa-paw"></i> Crear Mascota</button>
+            <button id="btn-mostrar-estadisticas" class="btn btn-secondary w-100 mb-2" onclick="toggleEstadisticas()"><i class="fas fa-chart-bar"></i> Mostrar Estadísticas</button>
+            <button class="btn btn-info w-100 mb-2" onclick="mostrarAlimentar()"><i class="fas fa-utensils"></i> Alimentar</button>
+            <button class="btn btn-success w-100 mb-2" onclick="jugar()"><i class="fas fa-gamepad"></i> Jugar</button>
+            <button class="btn btn-warning w-100 mb-2" onclick="estudiar()"><i class="fas fa-book"></i> Estudiar</button>
+            <button class="btn btn-light w-100 mb-2" onclick="banio()"><i class="fas fa-bath"></i> Baño</button>
+            <button class="btn btn-danger w-100 mb-2" onclick="curar()"><i class="fas fa-heartbeat"></i> Curar</button>
+            <button class="btn btn-dark w-100 mb-2" onclick="pasear()"><i class="fas fa-walking"></i> Pasear</button>
+            <button class="btn btn-secondary w-100 mb-2" onclick="toggleInventario()"><i class="fas fa-box"></i> Inventario</button>
+            <button class="btn btn-primary w-100 mb-2" onclick="mostrarCita()"><i class="fas fa-heart"></i> Tener Cita</button>
+            <button class="btn btn-info w-100 mb-2" onclick="elegirCarrera()"><i class="fas fa-user-graduate"></i> Elegir Carrera</button>
+            <button id="btn-cerrar-menu" class="btn btn-danger w-100 mb-2" onclick="cerrarMenu()"><i class="fas fa-times"></i> Cerrar Menú</button>
         </div>
-        <button id="btn-mostrar-menu" class="btn oculto mt-3" onclick="mostrarMenu()"><i class="fas fa-bars"></i> Mostrar Menú</button>
+        <button id="btn-mostrar-menu" class="btn btn-secondary w-100 oculto mt-3" onclick="mostrarMenu()"><i class="fas fa-bars"></i> Mostrar Menú</button>
         <div id="alimentar" class="oculto mt-4">
-            <button class="btn" onclick="alimentar('Pasta')"><i class="fas fa-spaghetti"></i> Pasta</button>
-            <button class="btn" onclick="alimentar('Sushi')"><i class="fas fa-fish"></i> Sushi</button>
-            <button class="btn" onclick="alimentar('Hamburguesa')"><i class="fas fa-hamburger"></i> Hamburguesa</button>
-            <button class="btn" onclick="alimentar('Manzana')"><i class="fas fa-apple-alt"></i> Manzana</button>
-            <button class="btn" onclick="alimentar('Pizza')"><i class="fas fa-pizza-slice"></i> Pizza</button>
-            <button class="btn" onclick="alimentar('Ensalada')"><i class="fas fa-leaf"></i> Ensalada</button>
-            <button class="btn btn-back" onclick="volver()"><i class="fas fa-arrow-left"></i> Volver</button>
+            <button class="btn btn-primary w-100 mb-2" onclick="alimentar('Pasta')"><i class="fas fa-spaghetti"></i> Pasta</button>
+            <button class="btn btn-primary w-100 mb-2" onclick="alimentar('Sushi')"><i class="fas fa-fish"></i> Sushi</button>
+            <button class="btn btn-primary w-100 mb-2" onclick="alimentar('Hamburguesa')"><i class="fas fa-hamburger"></i> Hamburguesa</button>
+            <button class="btn btn-primary w-100 mb-2" onclick="alimentar('Manzana')"><i class="fas fa-apple-alt"></i> Manzana</button>
+            <button class="btn btn-primary w-100 mb-2" onclick="alimentar('Pizza')"><i class="fas fa-pizza-slice"></i> Pizza</button>
+            <button class="btn btn-primary w-100 mb-2" onclick="alimentar('Ensalada')"><i class="fas fa-leaf"></i> Ensalada</button>
+            <button class="btn btn-back btn-secondary w-100 mb-2" onclick="volver()"><i class="fas fa-arrow-left"></i> Volver</button>
         </div>
         <div id="inventario" class="oculto mt-4">
             <h3>Inventario</h3>
             <ul id="lista-inventario" class="list-group"></ul>
-            <button class="btn btn-back" onclick="volver()"><i class="fas fa-arrow-left"></i> Volver</button>
+            <button class="btn btn-back btn-secondary w-100 mb-2" onclick="volver()"><i class="fas fa-arrow-left"></i> Volver</button>
         </div>
         <div id="citas" class="oculto mt-4">
             <h3>Citas</h3>
-            <button class="btn" onclick="cita('Cine')"><i class="fas fa-film"></i> Ir al cine</button>
-            <button class="btn" onclick="cita('Restaurante')"><i class="fas fa-utensils"></i> Ir a un restaurante</button>
-            <button class="btn" onclick="cita('Parque')"><i class="fas fa-tree"></i> Pasear en el parque</button>
-            <button class="btn" onclick="cita('Museo')"><i class="fas fa-landmark"></i> Visitar un museo</button>
-            <button class="btn btn-back" onclick="volver()"><i class="fas fa-arrow-left"></i> Volver</button>
+            <button class="btn btn-primary w-100 mb-2" onclick="cita('Cine')"><i class="fas fa-film"></i> Ir al cine</button>
+            <button class="btn btn-primary w-100 mb-2" onclick="cita('Restaurante')"><i class="fas fa-utensils"></i> Ir a un restaurante</button>
+            <button class="btn btn-primary w-100 mb-2" onclick="cita('Parque')"><i class="fas fa-tree"></i> Pasear en el parque</button>
+            <button class="btn btn-primary w-100 mb-2" onclick="cita('Museo')"><i class="fas fa-landmark"></i> Visitar un museo</button>
+            <button class="btn btn-back btn-secondary w-100 mb-2" onclick="volver()"><i class="fas fa-arrow-left"></i> Volver</button>
         </div>
         <div id="pasear" class="oculto mt-4">
             <h3>Pasear</h3>
-            <button class="btn" onclick="cita('Cine')"><i class="fas fa-film"></i> Ir al cine</button>
-            <button class="btn" onclick="cita('Restaurante')"><i class="fas fa-utensils"></i> Ir a un restaurante</button>
-            <button class="btn" onclick="cita('Parque')"><i class="fas fa-tree"></i> Pasear en el parque</button>
-            <button class="btn" onclick="cita('Museo')"><i class="fas fa-landmark"></i> Visitar un museo</button>
-            <button class="btn btn-back" onclick="volver()"><i class="fas fa-arrow-left"></i> Volver</button>
+            <button class="btn btn-primary w-100 mb-2" onclick="cita('Cine')"><i class="fas fa-film"></i> Ir al cine</button>
+            <button class="btn btn-primary w-100 mb-2" onclick="cita('Restaurante')"><i class="fas fa-utensils"></i> Ir a un restaurante</button>
+            <button class="btn btn-primary w-100 mb-2" onclick="cita('Parque')"><i class="fas fa-tree"></i> Pasear en el parque</button>
+            <button class="btn btn-primary w-100 mb-2" onclick="cita('Museo')"><i class="fas fa-landmark"></i> Visitar un museo</button>
+            <button class="btn btn-back btn-secondary w-100 mb-2" onclick="volver()"><i class="fas fa-arrow-left"></i> Volver</button>
         </div>
         <div id="carrera" class="oculto mt-4">
             <h3>Elegir Carrera</h3>
-            <button class="btn" onclick="elegir('Ingeniero')"><i class="fas fa-hard-hat"></i> Ingeniero</button>
-            <button class="btn" onclick="elegir('Médico')"><i class="fas fa-user-md"></i> Médico</button>
-            <button class="btn" onclick="elegir('Artista')"><i class="fas fa-paint-brush"></i> Artista</button>
-            <button class="btn btn-back" onclick="volver()"><i class="fas fa-arrow-left"></i> Volver</button>
+            <button class="btn btn-primary w-100 mb-2" onclick="elegir('Ingeniero')"><i class="fas fa-hard-hat"></i> Ingeniero</button>
+            <button class="btn btn-primary w-100 mb-2" onclick="elegir('Médico')"><i class="fas fa-user-md"></i> Médico</button>
+            <button class="btn btn-primary w-100 mb-2" onclick="elegir('Artista')"><i class="fas fa-paint-brush"></i> Artista</button>
+            <button class="btn btn-back btn-secondary w-100 mb-2" onclick="volver()"><i class="fas fa-arrow-left"></i> Volver</button>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
